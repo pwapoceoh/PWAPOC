@@ -1,0 +1,7 @@
+{
+  "name": "PWAPOC",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
