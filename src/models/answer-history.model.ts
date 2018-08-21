@@ -1,4 +1,4 @@
-export class AnswerHistory {
+/*export class AnswerHistory {
 
     private teamId: number = 0;
     private eventId: number = 0;
@@ -30,4 +30,13 @@ export class AnswerHistory {
 
     public get CorrectInd(): number { return this.correctInd; }
     public set CorrectInd(value: number) { this.correctInd = value; }
+  }*/
+
+  export interface AnswerHistory {
+
+    teamId: number;
+    eventId: number;
+    questionId: number;
+    selectedAnswer: string;
+    correctInd: number;
   }

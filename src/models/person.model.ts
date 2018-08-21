@@ -1,4 +1,4 @@
-export class Person {
+/*export class Person {
 
     private personId: number = 0;
     private name: string = "";
@@ -35,4 +35,14 @@ export class Person {
   
     public get TeamId(): number { return this.teamId; }
     public set TeamId(value: number) { this.teamId = value; }
+  }*/
+
+  export interface Person {
+
+    personId: number;
+    name: string;
+    surname: string;
+    email: string;
+    userName: string;
+    teamId: number;
   }

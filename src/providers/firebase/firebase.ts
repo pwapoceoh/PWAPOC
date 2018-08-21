@@ -1,6 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
+import { Team } from '../../models/team.model';
+import { AnswerHistory } from '../../models/answer-history.model';
+import { Observable } from 'rxjs';
 
 /*
   Generated class for the FirebaseProvider provider.
@@ -14,7 +17,7 @@ export class FirebaseProvider {
    constructor(public afd: AngularFireDatabase) { }
  
   getShoppingItems() {
-    return this.afd.list('/shoppingItems/');
+    return this.afd.list('/shoppingItems');
   }
  
   addItem(name) {
@@ -25,4 +28,19 @@ export class FirebaseProvider {
     this.afd.list('/shoppingItems/').remove(id);
   }
 
+  addTeam(team: Team) {
+    this.afd.list('/team/').push(team);
+  }
+   
+  getTeams(): Observable<Team[]> {
+    return this.afd.list<Team>('/team').valueChanges();
+  }
+
+  getHistory(): Observable<AnswerHistory[]> {
+    return this.afd.list<AnswerHistory>('/answerHistory').valueChanges();
+  }
+  addHistory(answerHistory: AnswerHistory) {
+    this.afd.list('/answerHistory/').push(answerHistory);
+  }
 }
+

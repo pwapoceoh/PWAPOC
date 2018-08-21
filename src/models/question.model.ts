@@ -1,4 +1,4 @@
-export class Question {
+/*export class Question {
 
     private questionId: number = 0;
     private difficulty: number = 0;
@@ -50,4 +50,17 @@ export class Question {
   
     public get Answer(): string { return this.answer; }
     public set Answer(value: string) { this.answer = value; }
+  }*/
+
+  export interface Question {
+
+    questionId: number;
+    difficulty: number;
+    category: string;
+    question: string;
+    optionA: string;
+    optionB: string;
+    optionC: string;
+    optionD: string;
+    answer: string;
   }

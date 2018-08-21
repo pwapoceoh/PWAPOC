@@ -1,4 +1,4 @@
-export class Evevnt {
+/*export class Evevnt {
 
     private eventId: number = 0;
     private name: string = "";
@@ -20,4 +20,10 @@ export class Evevnt {
   
     public get EventDate(): Date { return this.eventDate; }
     public set EventDate(value: Date) { this.eventDate = value; }
+  }*/
+
+  export interface Evevnt {
+    eventId: number;
+    name: string;
+    eventDate: Date;
   }

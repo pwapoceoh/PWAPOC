@@ -5,6 +5,7 @@ import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
+import { LeaderboardPage } from '../pages/leaderboards/leaderboards';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -30,6 +31,7 @@ import { FirebaseProvider } from './../providers/firebase/firebase';
     MyApp,
     AboutPage,
     ContactPage,
+    LeaderboardPage,
     HomePage,
     TabsPage
   ],
@@ -45,6 +47,7 @@ import { FirebaseProvider } from './../providers/firebase/firebase';
     MyApp,
     AboutPage,
     ContactPage,
+    LeaderboardPage,
     HomePage,
     TabsPage
   ],

@@ -1,4 +1,4 @@
-export class Team {
+/*export class Team {
 
     private teamId: number = 0;
     private captainId: number = 0;
@@ -6,7 +6,8 @@ export class Team {
     private name: string = "";
     private logo: string = "";
     private color: string = "";
-    private deviceToken: string = "";
+    private deviceToken: string = ""; 
+    public score: number = 0;
   
     constructor(data: any = undefined) {
       if (data) {
@@ -17,6 +18,7 @@ export class Team {
         this.logo = data.Logo;
         this.color = data.Color;
         this.deviceToken = data.DeviceToken;
+        this.score = data.Score;
       }
     }
   
@@ -40,4 +42,19 @@ export class Team {
   
     public get DeviceToken(): string { return this.deviceToken; }
     public set DeviceToken(value: string) { this.deviceToken = value; }
+  
+    public get Score(): number { return this.score; }
+    public set Score(value: number) { this.score = value; }
+  }*/
+
+  export interface Team {
+
+    teamId: number;
+    captainId: number;
+    status: number;
+    name: string;
+    logo: string;
+    color: string;
+    deviceToken: string; 
+    score: number;
   }

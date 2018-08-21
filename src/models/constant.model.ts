@@ -1,4 +1,4 @@
-export class Constant {
+/*export class Constant {
 
     private constantId: number = 0;
     private code: string = "";
@@ -25,4 +25,12 @@ export class Constant {
   
     public get Value(): string { return this.value; }
     public set Value(value: string) { this.value = value; }
+  }*/
+
+  export interface Constant {
+
+    constantId: number;
+    code: string;
+    description: string;
+    value: string;
   }
