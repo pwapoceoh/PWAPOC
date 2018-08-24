@@ -8,6 +8,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { LeaderboardPage } from '../pages/leaderboards/leaderboards';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { IntervalPage } from '../pages/interval/interval';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -33,7 +34,8 @@ import { FirebaseProvider } from './../providers/firebase/firebase';
     ContactPage,
     LeaderboardPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    IntervalPage
   ],
   imports: [
     BrowserModule,
@@ -49,7 +51,8 @@ import { FirebaseProvider } from './../providers/firebase/firebase';
     ContactPage,
     LeaderboardPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    IntervalPage
   ],
   providers: [
     StatusBar,
