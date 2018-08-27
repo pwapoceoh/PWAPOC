@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Interval
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    {{ clockDisplay }}
+  </ion-item>
+  <ion-col>
+    <button ion-button (click)="fiveInterval()">5 Minutes</button>
+  </ion-col>
+  <ion-col>
+    <button ion-button (click)="tenInterval()">10 Minutes</button>
+  </ion-col>
+  <ion-col>
+    <button ion-button (click)="fifteenInterval()">15 Minutes</button>
+  </ion-col>
+</ion-content>

@@ -5,9 +5,11 @@ import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
+import { LeaderboardPage } from '../pages/leaderboards/leaderboards';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { AdminPage } from '../pages/admin/admin';
+import { IntervalPage } from '../pages/interval/interval';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -31,9 +33,11 @@ import { FirebaseProvider } from './../providers/firebase/firebase';
     MyApp,
     AboutPage,
     ContactPage,
+    LeaderboardPage,
     HomePage,
     TabsPage,
-    AdminPage
+    AdminPage,
+    IntervalPage
   ],
   imports: [
     BrowserModule,
@@ -47,9 +51,11 @@ import { FirebaseProvider } from './../providers/firebase/firebase';
     MyApp,
     AboutPage,
     ContactPage,
+    LeaderboardPage,
     HomePage,
     TabsPage,
-    AdminPage
+    AdminPage,
+    IntervalPage
   ],
   providers: [
     StatusBar,
