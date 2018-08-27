@@ -25,4 +25,11 @@ export class FirebaseProvider {
     this.afd.list('/shoppingItems/').remove(id);
   }
 
+  getQuestions(calback) {
+    //return this.afd.list('/question/');
+    this.afd.database.ref('/question/').orderByChild("category").once('value').then(function (snapshot) {
+      calback(snapshot.val()); 
+    });
+  }
+
 }
