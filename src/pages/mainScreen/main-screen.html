@@ -1,0 +1,17 @@
+<ion-header>
+    <ion-navbar color="primary">
+      <ion-title>
+        Question
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+   
+  <ion-content>   
+    <ion-list>
+      <ion-item-sliding *ngFor="let item of teams">
+        <ion-item>
+          {{ item.name }} <div style ="text-align: right">{{ item.score }}</div>
+        </ion-item>
+      </ion-item-sliding>
+    </ion-list>
+  </ion-content>
