@@ -1,0 +1,44 @@
+<ion-slides #slider pager (ionDrag)="onIonDrag($event)" options="slidesOptions">
+
+  <ion-slide style="background-color: lightgrey" padding>
+    <h2 style="color: dimgray;">START TIMER TO<br> BEGIN THE GAME</h2>
+    <button ion-button style="background-color: dimgray; color: whitesmoke" (click)="startGame()">START TIMER</button>
+  </ion-slide>
+
+  <ion-slide style="background-color: lightgrey" padding>
+    <h6 style="color: dimgray;">THE GAME WILL BEGIN IN</h6>
+    <h1 text-center>{{displayTime}}</h1>
+    <button ion-button style="background-color: dimgray; color: whitesmoke" (click)="slideNext()">START</button>
+  </ion-slide>
+
+ <ion-slide style="background-color: lightgrey" padding>   
+    <label *ngIf="questionTimeHasStarted" text-center>{{questionDisplayTime}}</label>
+    <h2 style="color: dimgray;">Question {{questionNumber}}</h2>    
+    <h2 *ngIf="questionTimeHasFinished" style="color: dimgray;">TIME IS UP</h2>
+    <h6 style="color: dimgray;">{{category}}</h6>
+    <p>{{question}}</p>
+    <!-- [ngClass]="{'btnChecked' : clickedAnswer === 1, 'btnDefault':clickedAnswer !== 1}"  (click)="clickedAnswer = 1"-->
+    <button ion-button class="btnDefault" round block> <div style="width: 100%"><label style="float: left; font-size: 30px;"> A </label><label style="float: left; margin-left: 20px; margin-top: 10px;">Answer</label></div></button><br>
+    <button ion-button class="btnDefault" round block> <div style="width: 100%"><label style="float: left; font-size: 30px;"> A </label><label style="float: left; margin-left: 20px; margin-top: 10px;">Answer</label></div></button><br>
+    <button ion-button class="btnDefault" round block> <div style="width: 100%"><label style="float: left; font-size: 30px;"> A </label><label style="float: left; margin-left: 20px; margin-top: 10px;">Answer</label></div></button><br>
+    <button ion-button class="btnDefault" round block> <div style="width: 100%"><label style="float: left; font-size: 30px;"> A </label><label style="float: left; margin-left: 20px; margin-top: 10px;">Answer</label></div></button><br>
+
+    <button ion-button style="background-color: dimgray; color: whitesmoke" *ngIf="!questionTimeHasFinished" (click)="startQuestionTimer()">START TIMER</button>
+    <button ion-button style="background-color: dimgray; color: whitesmoke" *ngIf="questionTimeHasFinished && !answerIsRevealed" (click)="revealAnswer()">REVEAL ANSWER</button>
+    <button ion-button style="background-color: dimgray; color: whitesmoke" *ngIf="answerIsRevealed" (click)="nextQuestion()">NEXT QUESTION</button>
+  </ion-slide>
+
+  <ion-slide style="background-color: lightgrey" padding>   
+    <h1 *ngIf="questionTimeHasStarted" text-center>{{questionDisplayTime}}</h1>
+    <h2 style="color: dimgray;">{{questionText}}</h2>
+    <h6 style="color: dimgray;">{{category}}</h6>
+    <p>{{question}}</p>
+    <!-- [ngClass]="{'btnChecked' : clickedAnswer === 1, 'btnDefault':clickedAnswer !== 1}"  (click)="clickedAnswer = 1"-->
+    <button ion-button class="btnDefault" round block> <div style="width: 100%"><label style="float: left; font-size: 30px;"> A </label><label style="float: left; margin-left: 20px; margin-top: 10px;">Answer</label></div></button><br>
+    <button ion-button class="btnDefault" round block> <div style="width: 100%"><label style="float: left; font-size: 30px;"> A </label><label style="float: left; margin-left: 20px; margin-top: 10px;">Answer</label></div></button><br>
+    <button ion-button class="btnDefault" round block> <div style="width: 100%"><label style="float: left; font-size: 30px;"> A </label><label style="float: left; margin-left: 20px; margin-top: 10px;">Answer</label></div></button><br>
+    <button ion-button class="btnDefault" round block> <div style="width: 100%"><label style="float: left; font-size: 30px;"> A </label><label style="float: left; margin-left: 20px; margin-top: 10px;">Answer</label></div></button><br>
+    <button ion-button style="background-color: dimgray; color: whitesmoke" (click)="startQuestionTimer()">START TIMER</button>
+  </ion-slide>
+
+</ion-slides>

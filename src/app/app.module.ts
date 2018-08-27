@@ -8,6 +8,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { LeaderboardPage } from '../pages/leaderboards/leaderboards';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
+import { AdminPage } from '../pages/admin/admin';
 import { IntervalPage } from '../pages/interval/interval';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -35,6 +36,7 @@ import { FirebaseProvider } from './../providers/firebase/firebase';
     LeaderboardPage,
     HomePage,
     TabsPage,
+    AdminPage,
     IntervalPage
   ],
   imports: [
@@ -52,6 +54,7 @@ import { FirebaseProvider } from './../providers/firebase/firebase';
     LeaderboardPage,
     HomePage,
     TabsPage,
+    AdminPage,
     IntervalPage
   ],
   providers: [
