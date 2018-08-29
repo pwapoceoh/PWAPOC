@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Team } from '../../models/team.model';
 import { AnswerHistory } from '../../models/answer-history.model';
+import { Constant } from '../../models/constant.model';
 import { Observable } from 'rxjs';
 
 /*
@@ -28,7 +29,6 @@ export class FirebaseProvider {
     this.afd.list('/shoppingItems/').remove(id);
   }
 
-<<<<<<< HEAD
   getQuestions(calback) {
     //return this.afd.list('/question/');
     this.afd.database.ref('/question/').orderByChild("category").once('value').then(function (snapshot) {
@@ -36,7 +36,6 @@ export class FirebaseProvider {
     });
   }
 
-=======
   addTeam(team: Team) {
     this.afd.list('/team/').push(team);
   }
@@ -51,6 +50,9 @@ export class FirebaseProvider {
   addHistory(answerHistory: AnswerHistory) {
     this.afd.list('/answerHistory/').push(answerHistory);
   }
->>>>>>> b52e2dfdfb656292edac852451cc05da75a2534e
+
+  getSystemConstant(): Observable<Constant[]> {
+    return this.afd.list<Constant>('/systemConstant').valueChanges();
+  }
 }
 

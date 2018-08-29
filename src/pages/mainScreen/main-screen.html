@@ -7,11 +7,34 @@
   </ion-header>
    
   <ion-content>   
-    <ion-list>
-      <ion-item-sliding *ngFor="let item of teams">
-        <ion-item>
-          {{ item.name }} <div style ="text-align: right">{{ item.score }}</div>
-        </ion-item>
-      </ion-item-sliding>
-    </ion-list>
+    <h3 style="text-align:center">Category: {{currentQuestion?.category}}</h3>
+    <h1 style="text-align:center">{{currentQuestion?.question}}</h1>
+    <!--Answer A --> 
+    <div *ngIf="currentQuestion?.answerA === currentQuestion?.correctAnswer && revealAnswer === 1">
+      <button ion-button class="btnDefault" round block style="background-color:black"> <div style="width: 100%"><label style="float: left; font-size: 30px;"> {{currentQuestion?.answerA}} </label></div></button><br>
+    </div>
+    <div *ngIf="currentQuestion?.answerA !== currentQuestion?.correctAnswer || revealAnswer === 0">
+      <button ion-button class="btnDefault" round block> <div style="width: 100%"><label style="float: left; font-size: 30px;"> {{currentQuestion?.answerA}} </label></div></button><br>
+    </div>
+    <!--Answer B -->
+    <div *ngIf="currentQuestion?.answerB === currentQuestion?.correctAnswer && revealAnswer === 1">
+      <button ion-button class="btnDefault" round block style="background-color:black"> <div style="width: 100%"><label style="float: left; font-size: 30px;"> {{currentQuestion?.answerB}} </label></div></button><br>
+    </div>
+    <div *ngIf="currentQuestion?.answerB !== currentQuestion?.correctAnswer || revealAnswer === 0">
+      <button ion-button class="btnDefault" round block> <div style="width: 100%"><label style="float: left; font-size: 30px;"> {{currentQuestion?.answerB}} </label></div></button><br>
+    </div>
+    <!--Answer C -->
+    <div *ngIf="currentQuestion?.answerC === currentQuestion?.correctAnswer && revealAnswer === 1">
+      <button ion-button class="btnDefault" round block style="background-color:black"> <div style="width: 100%"><label style="float: left; font-size: 30px;"> {{currentQuestion?.answerC}} </label></div></button><br>
+    </div>
+    <div *ngIf="currentQuestion?.answerC !== currentQuestion?.correctAnswer || revealAnswer === 0">
+      <button ion-button class="btnDefault" round block> <div style="width: 100%"><label style="float: left; font-size: 30px;"> {{currentQuestion?.answerC}} </label></div></button><br>
+    </div>
+    <!--Answer D -->
+    <div *ngIf="currentQuestion?.answerD === currentQuestion?.correctAnswer && revealAnswer === 1">
+      <button ion-button class="btnDefault" round block style="background-color:black"> <div style="width: 100%"><label style="float: left; font-size: 30px;"> {{currentQuestion?.answerD}} </label></div></button><br>
+    </div>
+    <div *ngIf="currentQuestion?.answerD !== currentQuestion?.correctAnswer || revealAnswer === 0">
+      <button ion-button class="btnDefault" round block> <div style="width: 100%"><label style="float: left; font-size: 30px;"> {{currentQuestion?.answerD}} </label></div></button><br>
+    </div>
   </ion-content>

@@ -10,6 +10,7 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { AdminPage } from '../pages/admin/admin';
 import { IntervalPage } from '../pages/interval/interval';
+import { MainScreenPage } from '../pages/mainScreen/main-screen';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -37,7 +38,8 @@ import { FirebaseProvider } from './../providers/firebase/firebase';
     HomePage,
     TabsPage,
     AdminPage,
-    IntervalPage
+    IntervalPage,
+    MainScreenPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ import { FirebaseProvider } from './../providers/firebase/firebase';
     HomePage,
     TabsPage,
     AdminPage,
-    IntervalPage
+    IntervalPage,
+    MainScreenPage
   ],
   providers: [
     StatusBar,

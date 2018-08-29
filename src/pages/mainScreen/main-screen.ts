@@ -1,8 +1,9 @@
 import { FirebaseProvider } from '../../providers/firebase/firebase';
 import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { Team } from '../../models/team.model'
-import { AnswerHistory } from '../../models/answer-history.model'
+import { Question } from '../../models/question.model'
+import { Constant } from '../../models/constant.model'
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'page-main-screen',
@@ -10,24 +11,26 @@ import { AnswerHistory } from '../../models/answer-history.model'
 })
 export class MainScreenPage implements OnInit {
 
-  teams: Team[];
-  answerHistory: AnswerHistory[];
-  teamTotals: any[];
+  questions: Question[];
+  currentQuestion: Question;
+  questionNumber = 1;
+  currentQuestionId: Constant;
+  revealAnswer = 0;
 
   constructor(public navCtrl: NavController, public firebaseProvider: FirebaseProvider) {
-
-   }
+    this.firebaseProvider.getQuestions(snapshot => {
+      this.questions = snapshot;
+      this.firebaseProvider.getSystemConstant().subscribe(syscon => {
+        this.currentQuestionId = syscon.find(res => res.code == "CQID");
+        this.questionNumber = parseInt(this.currentQuestionId.value);
+        this.currentQuestion = this.questions[this.questionNumber];
+        this.revealAnswer = parseInt(syscon.find(res => res.code == "REVA").value);
+  
+      });
+    });
+  }
  
   ngOnInit(){
-    this.firebaseProvider.getTeams().subscribe(result => 
-      {
-        this.teams = result;
-        this.firebaseProvider.getHistory().subscribe(his => {
-          this.answerHistory = his
-          this.teams.forEach(team => {
-            team.score = this.answerHistory.map(x => x.teamId === team.teamId ? x.correctInd : 0).reduce((sum, current) => sum + current) * 10;
-          });
-        });
-      });  
+    
   }
 }
