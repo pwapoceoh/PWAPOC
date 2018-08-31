@@ -2,8 +2,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LeaderboardPage } from '../leaderboards/leaderboards';
-import * as Rx from 'rxjs/Rx';
-import { root } from 'rxjs/internal/util/root';
 
 @Component({
     selector: 'page-interval',
@@ -16,6 +14,7 @@ export class IntervalPage implements OnInit {
     minutes = "--";
     clockDisplay: string;
     interval: number;
+    rootPage:any;
 
     constructor(public navCtrl: NavController) {
 

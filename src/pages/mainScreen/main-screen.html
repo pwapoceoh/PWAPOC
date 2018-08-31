@@ -37,4 +37,5 @@
     <div *ngIf="currentQuestion?.answerD !== currentQuestion?.correctAnswer || revealAnswer === 0">
       <button ion-button class="btnDefault" round block> <div style="width: 100%"><label style="float: left; font-size: 30px;"> {{currentQuestion?.answerD}} </label></div></button><br>
     </div>
+    <button ion-button style="background-color: dimgray; color: whitesmoke" (click)="nextQuestion()">NEXT QUESTION</button>
   </ion-content>

@@ -54,5 +54,8 @@ export class FirebaseProvider {
   getSystemConstant(): Observable<Constant[]> {
     return this.afd.list<Constant>('/systemConstant').valueChanges();
   }
+  updateSystemConstant(constant : Constant, key: string) {
+    this.afd.list('/systemConstant').update(key, constant);
+  }
 }
 

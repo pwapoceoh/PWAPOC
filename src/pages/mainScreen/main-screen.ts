@@ -33,4 +33,9 @@ export class MainScreenPage implements OnInit {
   ngOnInit(){
     
   }
+
+  nextQuestion() {
+    this.currentQuestionId.value = String(parseInt(this.currentQuestionId.value) + 1);
+    this.firebaseProvider.updateSystemConstant(this.currentQuestionId,String(this.currentQuestionId.constantId));
+  }
 }
